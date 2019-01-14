@@ -10,5 +10,17 @@
             "StackName": "websurveyclient-20190114105435",
             "StackId": "arn:aws:cloudformation:us-east-1:924685066025:stack/websurveyclient-20190114105435/748f0f60-1825-11e9-8a43-0eaa79b17470"
         }
+    },
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "websurveyclient-20190114110917-authRole",
+            "UnauthRoleArn": "arn:aws:iam::924685066025:role/websurveyclient-20190114110917-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::924685066025:role/websurveyclient-20190114110917-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "websurveyclient-20190114110917-deployment",
+            "UnauthRoleName": "websurveyclient-20190114110917-unauthRole",
+            "StackName": "websurveyclient-20190114110917",
+            "StackId": "arn:aws:cloudformation:us-east-1:924685066025:stack/websurveyclient-20190114110917/82479030-1827-11e9-84b8-12545315cab6"
+        }
     }
 }

@@ -1,5 +1,12 @@
 
 
+Info
+----
+using the steps from [this page](https://aws-amplify.github.io/docs/cli/multienv?sdk=js) to setup multiple amplify environments for `aws` services
+
+
+
+
 Output From `amplify init` command:
 -----------------------------------
 
