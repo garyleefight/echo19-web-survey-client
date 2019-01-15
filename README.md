@@ -1,15 +1,17 @@
+# echo19 Web Survey Client
 
+A web survey...
 
-Info
-----
+## Ecosystem
+
+- [Create React App](https://facebook.github.io/create-react-app/)
+  - React
+
+## Info
+
 using the steps from [this page](https://aws-amplify.github.io/docs/cli/multienv?sdk=js) to setup multiple amplify environments for `aws` services
 
-
-
-
-Output From `amplify init` command:
------------------------------------
-
+## Output From `amplify init` command:
 
     Jays-MacBook:echo19-web-survey-client jayw$ amplify init
     Note: It is recommended to run this command from the root of your app directory
@@ -33,17 +35,17 @@ Output From `amplify init` command:
     ? Please choose the profile you want to use echo19
     ⠧ Initializing project in the cloud...
 
-    CREATE_IN_PROGRESS websurveyclient-20190114105435 AWS::CloudFormation::Stack Mon Jan 14 2019 10:54:36 GMT-0700 (MST) User Initiated             
-    CREATE_IN_PROGRESS UnauthRole                     AWS::IAM::Role             Mon Jan 14 2019 10:54:40 GMT-0700 (MST)                            
-    CREATE_IN_PROGRESS DeploymentBucket               AWS::S3::Bucket            Mon Jan 14 2019 10:54:40 GMT-0700 (MST)                            
-    CREATE_IN_PROGRESS AuthRole                       AWS::IAM::Role             Mon Jan 14 2019 10:54:40 GMT-0700 (MST)                            
+    CREATE_IN_PROGRESS websurveyclient-20190114105435 AWS::CloudFormation::Stack Mon Jan 14 2019 10:54:36 GMT-0700 (MST) User Initiated
+    CREATE_IN_PROGRESS UnauthRole                     AWS::IAM::Role             Mon Jan 14 2019 10:54:40 GMT-0700 (MST)
+    CREATE_IN_PROGRESS DeploymentBucket               AWS::S3::Bucket            Mon Jan 14 2019 10:54:40 GMT-0700 (MST)
+    CREATE_IN_PROGRESS AuthRole                       AWS::IAM::Role             Mon Jan 14 2019 10:54:40 GMT-0700 (MST)
     CREATE_IN_PROGRESS UnauthRole                     AWS::IAM::Role             Mon Jan 14 2019 10:54:40 GMT-0700 (MST) Resource creation Initiated
     CREATE_IN_PROGRESS AuthRole                       AWS::IAM::Role             Mon Jan 14 2019 10:54:40 GMT-0700 (MST) Resource creation Initiated
     CREATE_IN_PROGRESS DeploymentBucket               AWS::S3::Bucket            Mon Jan 14 2019 10:54:41 GMT-0700 (MST) Resource creation Initiated
     ⠇ Initializing project in the cloud...
 
-    CREATE_COMPLETE UnauthRole AWS::IAM::Role Mon Jan 14 2019 10:54:53 GMT-0700 (MST) 
-    CREATE_COMPLETE AuthRole   AWS::IAM::Role Mon Jan 14 2019 10:54:54 GMT-0700 (MST) 
+    CREATE_COMPLETE UnauthRole AWS::IAM::Role Mon Jan 14 2019 10:54:53 GMT-0700 (MST)
+    CREATE_COMPLETE AuthRole   AWS::IAM::Role Mon Jan 14 2019 10:54:54 GMT-0700 (MST)
     ✔ Successfully created initial AWS cloud resources for deployments.
     ✔ Initialized provider successfully.
     Initialized your environment successfully.
@@ -59,9 +61,7 @@ Output From `amplify init` command:
     Pro tip:
     Try "amplify add api" to create a backend API and then "amplify publish" to deploy everything
 
-
-
-__________________________________________________________
+---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
