@@ -11,7 +11,7 @@ global.shallow = shallow;
 global.render = render;
 global.mount = mount;
 
-// global.fetch = require('jest-fetch-mock');
+global.fetch = require('jest-fetch-mock');
 
 module.exports = {
   browser: true
