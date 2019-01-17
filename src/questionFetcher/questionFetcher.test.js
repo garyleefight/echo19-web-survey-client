@@ -8,19 +8,20 @@ describe('questionFetcher tests', () => {
     fetch.mockResponse(JSON.stringify(survey));
   });
 
-  test('can expetc error to be thrown', () => {
+  test('can test for expect error to be thrown', () => {
     expect(() => {
-      throw new TypeError('HELP');
-    }).toThrowError(TypeError);
+      throw new Error('HELP');
+    }).toThrowError(Error);
   });
 
-  // test('questionFetch can fail', async () => {
-  //   fetch.resetMocks();
-  //   fetch.mockResponse('blah', { status: 404 });
-  //   expect(async () => {
-  //     await questionFetcher();
-  //   }).toThrowError(TypeError);
-  // });
+  test('questionFetch can fail', async () => {
+    fetch.resetMocks();
+    fetch.mockResponse('blah', { status: 404 });
+    expect.assertions(1);
+    await expect(questionFetcher()).rejects.toEqual(
+      Error('invalid server response')
+    );
+  });
 
   test('questionFetcher returns data', async () => {
     const f = await questionFetcher();

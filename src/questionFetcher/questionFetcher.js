@@ -1,16 +1,15 @@
-const questionFetcher = async () => {
-  try {
-    const response = await fetch('http://localhost:3000/questions.json', {
+const questionFetcher = (url = 'http://localhost:3000/questions.json') =>
+  new Promise(async (resolve, reject) => {
+    const response = await fetch(url, {
       mode: 'cors'
     });
     if (response.ok) {
       const json = await response.json();
-      return json;
+      resolve(json);
     }
-    throw new Error('ERROR: invalid server response');
-  } catch (err) {
-    throw new Error(err);
-  }
-};
+    const e = Error('invalid server response');
+    reject(e);
+    // throw e;
+  });
 
 export default questionFetcher;
