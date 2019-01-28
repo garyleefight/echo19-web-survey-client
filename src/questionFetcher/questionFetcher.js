@@ -9,7 +9,6 @@ const questionFetcher = (url = 'http://localhost:3000/questions.json') =>
     }
     const e = Error('invalid server response');
     reject(e);
-    // throw e;
   });
 
 export default questionFetcher;
