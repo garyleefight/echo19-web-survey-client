@@ -2,7 +2,7 @@ import QuestionParser from './QuestionParser';
 import survey from '../mock/questions.json';
 
 describe('question parser tests', () => {
-  const qp = new QuestionParser(survey.questions);
+  const qp = new QuestionParser(survey);
 
   test('some questions contain bye', () => {
     expect(qp.questions[1].questionOptions[1].action).toBe('BYE');

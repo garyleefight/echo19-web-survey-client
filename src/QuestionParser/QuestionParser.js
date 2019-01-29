@@ -1,8 +1,8 @@
 import questionConverter from './questionConverter';
 
 export default class QuestionParser {
-  constructor(questions) {
-    this.questions = questionConverter(questions);
+  constructor(data) {
+    this.questions = questionConverter(data.questions);
     this.getAnswerQuestions = this.getNextQuestion;
   }
 

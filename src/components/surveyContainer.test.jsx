@@ -12,10 +12,18 @@ describe('survey container tests', () => {
     fetch.mockResponse(JSON.stringify(survey));
   });
 
+  test('contains survey questions', async () => {
+    const wrapper = shallow(<SurveyContainer />);
+    await waitForAsync(); // see comment above...
+    expect(wrapper.instance().state.questionParser.questions[0].id).toBe(
+      '35767'
+    );
+  });
+
   test('can load data', async () => {
     const wrapper = shallow(<SurveyContainer />);
     await waitForAsync(); // see comment above...
-    expect(wrapper.instance().state.questions).not.toBeNull();
+    expect(wrapper.instance().state.data).not.toBeNull();
   });
 
   test('can mount', () => {
