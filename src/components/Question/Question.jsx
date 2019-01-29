@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import QuestionOptions from '../QuestionOptions/QuestionOptions';
+
 class Question extends React.Component {
   static propTypes = {
     question: PropTypes.oneOfType([
@@ -32,6 +34,7 @@ class Question extends React.Component {
     return (
       <div className="question">
         <h3>{question.questionText}</h3>
+        <QuestionOptions questionOptions={question.questionOptions} />
       </div>
     );
   }

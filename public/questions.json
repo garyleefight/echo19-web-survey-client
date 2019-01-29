@@ -1,0 +1,269 @@
+{
+  "questions": [
+    {
+      "surveyQuestionId": 35767,
+      "SurveyQuestionName": "hello",
+      "defaultAction": "-1",
+      "defaultActionValue": "",
+      "singleDigit": 1,
+      "multipleDigitQuestion": 0,
+      "numberOfDigits": 1,
+      "required": 0,
+      "nameLong": "Hi [voter name]. Let’s begin!",
+      "defaultResponseText": "",
+      "statement": 1,
+      "feedback": 0
+    },
+    {
+      "surveyQuestionId": 35768,
+      "SurveyQuestionName": "Like ice cream?",
+      "defaultAction": "-1",
+      "defaultActionValue": "",
+      "noAnswerReceivedAction": "-1",
+      "noAnswerReceivedValue": "",
+      "singleDigit": 1,
+      "multipleDigitQuestion": 0,
+      "numberOfDigits": 1,
+      "required": 0,
+      "nameLong": "First, let’s start with do you like ice cream?",
+      "defaultResponseText": "",
+      "statement": 0,
+      "feedback": 0,
+      "answers": [
+        {
+          "surveyQuestionAnswerId": 159348,
+          "digit": "1",
+          "value": "Yes",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159349,
+          "digit": "2",
+          "value": "No",
+          "answerValue": "",
+          "action": "BYE",
+          "doNotRandomize": 0,
+          "responseText": ""
+        }
+      ]
+    },
+    {
+      "surveyQuestionId": 35769,
+      "SurveyQuestionName": "How often you eat ice cream?",
+      "defaultAction": "-1",
+      "defaultActionValue": "",
+      "noAnswerReceivedAction": "-1",
+      "noAnswerReceivedValue": "",
+      "singleDigit": 1,
+      "multipleDigitQuestion": 0,
+      "numberOfDigits": 1,
+      "required": 0,
+      "nameLong": "Okay, that’s good. About how many times a month would you say you eat ice cream?",
+      "defaultResponseText": "",
+      "statement": 0,
+      "feedback": 0,
+      "answers": [
+        {
+          "surveyQuestionAnswerId": 159350,
+          "digit": "1",
+          "value": "10 or more",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159351,
+          "digit": "2",
+          "value": "6 to 9 times per month",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159352,
+          "digit": "3",
+          "value": "3 to 5 times per month",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159353,
+          "digit": "4",
+          "value": "1 to 2 times per month",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159354,
+          "digit": "5",
+          "value": "less than once a month",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        }
+      ]
+    },
+    {
+      "surveyQuestionId": 35770,
+      "SurveyQuestionName": "how do you eat ice cream?",
+      "defaultAction": "-1",
+      "defaultActionValue": "",
+      "noAnswerReceivedAction": "-1",
+      "noAnswerReceivedValue": "",
+      "singleDigit": 1,
+      "multipleDigitQuestion": 0,
+      "numberOfDigits": 1,
+      "required": 0,
+      "nameLong": "Do you prefer to eat ice cream out of a Bowl, on a sugar cone, on a cake cone, or it doesn't matter?",
+      "defaultResponseText": "",
+      "statement": 0,
+      "feedback": 0,
+      "answers": [
+        {
+          "surveyQuestionAnswerId": 159355,
+          "digit": "1",
+          "value": "Bowl",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159356,
+          "digit": "2",
+          "value": "Sugar cone",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159357,
+          "digit": "3",
+          "value": "Cake cone",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159358,
+          "digit": "4",
+          "value": "It doesn't matter",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        }
+      ]
+    },
+    {
+      "surveyQuestionId": 35772,
+      "SurveyQuestionName": "Best ice cream flavor",
+      "defaultAction": "-1",
+      "defaultActionValue": "",
+      "noAnswerReceivedAction": "-1",
+      "noAnswerReceivedValue": "",
+      "singleDigit": 1,
+      "multipleDigitQuestion": 0,
+      "numberOfDigits": 1,
+      "required": 0,
+      "nameLong": "Now, the tough one - which of the following is the best ice cream flavor: Chocolate, Vanilla or Strawberry?",
+      "defaultResponseText": "",
+      "statement": 0,
+      "feedback": 0,
+      "answers": [
+        {
+          "surveyQuestionAnswerId": 159360,
+          "digit": "1",
+          "value": "Chocolate",
+          "answerValue": "",
+          "action": "GOTO=7",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159361,
+          "digit": "2",
+          "value": "Vanilla",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159362,
+          "digit": "3",
+          "value": "Strawberry",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        }
+      ]
+    },
+    {
+      "surveyQuestionId": 35773,
+      "SurveyQuestionName": "Sure it’s not chocolate?",
+      "defaultAction": "-1",
+      "defaultActionValue": "",
+      "noAnswerReceivedAction": "-1",
+      "noAnswerReceivedValue": "",
+      "singleDigit": 1,
+      "multipleDigitQuestion": 0,
+      "numberOfDigits": 1,
+      "required": 0,
+      "nameLong": "Are you sure it’s not chocolate?",
+      "defaultResponseText": "",
+      "statement": 0,
+      "feedback": 0,
+      "answers": [
+        {
+          "surveyQuestionAnswerId": 159363,
+          "digit": "1",
+          "value": "Yes",
+          "answerValue": "",
+          "action": "BYE",
+          "doNotRandomize": 0,
+          "responseText": ""
+        },
+        {
+          "surveyQuestionAnswerId": 159364,
+          "digit": "2",
+          "value": "No",
+          "answerValue": "",
+          "action": "GOTO=7",
+          "doNotRandomize": 0,
+          "responseText": ""
+        }
+      ]
+    },
+    {
+      "surveyQuestionId": 35774,
+      "SurveyQuestionName": "Chocolate is the best!",
+      "defaultAction": "BYE",
+      "defaultActionValue": "",
+      "singleDigit": 1,
+      "multipleDigitQuestion": 0,
+      "numberOfDigits": 1,
+      "required": 0,
+      "nameLong": "You are correct, chocolate is the best!",
+      "defaultResponseText": "",
+      "statement": 1,
+      "feedback": 0
+    }
+  ],
+  "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+  "goal": "Use this democall to play around with echo1>We have set up a robot-list to simulate voters answering the survey Contact us at help@echo19.com to get more information about this product.",
+  "endMessage": "Okay, that’s it. Thank you very much for your time! Have a great day/evening. This call was paid for by Chocolate Cows and is not authorized by any candidate or candidate’s committee. 555-555-5555."
+}
