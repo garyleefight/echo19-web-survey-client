@@ -2,6 +2,7 @@ import React from 'react';
 
 import questionFetcher from '../questionFetcher/questionFetcher';
 import QuestionParser from '../QuestionParser/QuestionParser';
+import Question from './Question/Question';
 
 export default class SurveyContainer extends React.Component {
   constructor(props) {
@@ -30,9 +31,11 @@ export default class SurveyContainer extends React.Component {
       return <div>loading...</div>;
     }
     return (
-      <div>
-        {/* <h1>survey container</h1> */}
-        <h2>{questionParser.getFirstQuestion().questionText}</h2>
+      <div className="gothere">
+        <Question
+          question={questionParser.getFirstQuestion()}
+          qp={questionParser}
+        />
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import SurveyContainer from './SurveyContainer';
+import Question from './Question/Question';
 
 import survey from '../mock/questions.json';
 
@@ -12,13 +13,28 @@ describe('survey container tests', () => {
     fetch.mockResponse(JSON.stringify(survey));
   });
 
-  test('question shows after questions loaded', async () => {
+  test('once questions loaded shows a question component', async () => {
+    expect.assertions(2);
     const wrapper = shallow(<SurveyContainer />);
     await waitForAsync(); // see comment above...
-    expect(wrapper.text()).toMatch(/Hi \[voter name\]\. Let’s begin!/);
+    expect(wrapper.find('.gothere')).toExist();
+    expect(wrapper.find(Question)).toExist();
+  });
+
+  test('question shows after questions loaded', async () => {
+    expect.assertions(1);
+    const wrapper = shallow(<SurveyContainer />);
+    await waitForAsync(); // see comment above...
+    expect(
+      wrapper
+        .find(Question)
+        .dive()
+        .text()
+    ).toMatch(/Hi \[voter name\]\. Let’s begin!/);
   });
 
   test('does not show loading after questions loaded', async () => {
+    expect.assertions(1);
     const wrapper = shallow(<SurveyContainer />);
     await waitForAsync(); // see comment above...
     expect(wrapper.text()).not.toMatch(/loading/);
@@ -30,6 +46,7 @@ describe('survey container tests', () => {
   });
 
   test('contains survey questions', async () => {
+    expect.assertions(1);
     const wrapper = shallow(<SurveyContainer />);
     await waitForAsync(); // see comment above...
     expect(wrapper.instance().state.questionParser.questions[0].id).toBe(
@@ -38,6 +55,7 @@ describe('survey container tests', () => {
   });
 
   test('can load data', async () => {
+    expect.assertions(1);
     const wrapper = shallow(<SurveyContainer />);
     await waitForAsync(); // see comment above...
     expect(wrapper.instance().state.data).not.toBeNull();
