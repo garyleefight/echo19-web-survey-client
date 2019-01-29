@@ -12,6 +12,23 @@ describe('survey container tests', () => {
     fetch.mockResponse(JSON.stringify(survey));
   });
 
+  test('question shows after questions loaded', async () => {
+    const wrapper = shallow(<SurveyContainer />);
+    await waitForAsync(); // see comment above...
+    expect(wrapper.text()).toMatch(/Hi \[voter name\]\. Let’s begin!/);
+  });
+
+  test('does not show loading after questions loaded', async () => {
+    const wrapper = shallow(<SurveyContainer />);
+    await waitForAsync(); // see comment above...
+    expect(wrapper.text()).not.toMatch(/loading/);
+  });
+
+  test('shows loading before questions loaded', () => {
+    const wrapper = shallow(<SurveyContainer />);
+    expect(wrapper.text()).toMatch(/loading/);
+  });
+
   test('contains survey questions', async () => {
     const wrapper = shallow(<SurveyContainer />);
     await waitForAsync(); // see comment above...
