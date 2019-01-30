@@ -43,9 +43,14 @@ describe('App tests', () => {
     expect(wrapper.find('blink')).not.toExist();
   });
 
-  it('renders without crashing', () => {
+  // this is an async for now - may need to revisit this because the component can be removed before the async call finishes - as per this warning:
+  //    console.error node_modules/react-dom/cjs/react-dom.development.js:506
+  //    Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronoustasks in the componentWillUnmount method.
+  //    in App (at App.test.jsx:48)
+  it('renders without crashing', async () => {
     const div = document.createElement('div');
     ReactDOM.render(<App />, div);
+    await waitForAsync(); // see comment above...
     ReactDOM.unmountComponentAtNode(div);
   });
 });

@@ -32,7 +32,7 @@ describe('survey container tests', () => {
     expect.assertions(2);
     const wrapper = shallow(<SurveyContainer survey={survey} />);
     await waitForAsync(); // see comment above...
-    expect(wrapper.find('.gothere')).toExist();
+    expect(wrapper.find('.surveyContainer')).toExist();
     expect(wrapper.find(Question)).toExist();
   });
 

@@ -29,7 +29,7 @@ export default class SurveyContainer extends React.Component {
       return <div>loading...</div>;
     }
     return (
-      <div className="gothere">
+      <div className="surveyContainer">
         <Question question={question} cf={this.answerClicked} />
       </div>
     );
