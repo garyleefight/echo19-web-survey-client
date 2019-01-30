@@ -5,7 +5,7 @@ describe('QuestionOptionButton tests', () => {
   test('has a click function', done => {
     expect.assertions(2);
     const cf = () => {
-      expect(true).toBeTruthy();
+      expect(true).toBeTruthy(); // if it doesn't get here, the click didn't work...
       done();
     };
     const wrapper = shallow(

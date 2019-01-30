@@ -1,41 +1,36 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-import questionFetcher from '../questionFetcher/questionFetcher';
 import QuestionParser from '../QuestionParser/QuestionParser';
 import Question from './Question/Question';
 
 export default class SurveyContainer extends React.Component {
+  static propTypes = {
+    survey: PropTypes.shape({
+      question: PropTypes.array
+    }).isRequired
+  };
+
   constructor(props) {
     super(props);
+    this.questionParser = new QuestionParser(props.survey);
     this.state = {
-      data: null,
-      questionParser: null
+      question: this.questionParser.getFirstQuestion()
     };
   }
 
-  async componentDidMount() {
-    try {
-      const response = await questionFetcher();
-      this.setState({
-        data: response,
-        questionParser: new QuestionParser(response)
-      });
-    } catch (err) {
-      console.log('err: ', err); // eslint-disable-line no-console
-    }
-  }
+  answerClicked = id => {
+    this.setState({ question: this.questionParser.getNextQuestion(id) });
+  };
 
   render() {
-    const { data, questionParser } = this.state;
-    if (!data) {
+    const { question } = this.state;
+    if (!question) {
       return <div>loading...</div>;
     }
     return (
       <div className="gothere">
-        <Question
-          question={questionParser.getFirstQuestion()}
-          qp={questionParser}
-        />
+        <Question question={question} cf={this.answerClicked} />
       </div>
     );
   }

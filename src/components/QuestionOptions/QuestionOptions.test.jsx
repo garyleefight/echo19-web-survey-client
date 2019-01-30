@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionOptions from './QuestionOptions';
+import QuestionOptionButton from '../QuestionOptionButton/QuestionOptionButton';
 
 const qo = [
   {
@@ -28,16 +29,24 @@ const qo = [
   }
 ];
 
+const cf = jest.fn();
+
 describe('QuestionOptions tests', () => {
-  test('has options rendered to page', () => {
-    const wrapper = shallow(<QuestionOptions questionOptions={qo} />);
-    expect(wrapper.text()).toMatch(/less than once a month/);
+  test('options have option buttons', () => {
+    const wrapper = shallow(<QuestionOptions questionOptions={qo} cf={cf} />);
+    expect(wrapper.find(QuestionOptionButton)).toExist();
   });
 
-  test('has opttions param', () => {
+  test('has 5 options rendered to page', () => {
+    const wrapper = shallow(<QuestionOptions questionOptions={qo} cf={cf} />);
+    expect(wrapper.find(QuestionOptionButton)).toHaveLength(5);
+  });
+
+  test('has options param', () => {
     const wrapper = shallow(
       <QuestionOptions
         questionOptions={[{ id: '35767-1', optionText: 'OK' }]}
+        cf={cf}
       />
     );
     expect(wrapper.instance().props.questionOptions[0].id).toBe('35767-1');
@@ -47,6 +56,7 @@ describe('QuestionOptions tests', () => {
     const wrapper = shallow(
       <QuestionOptions
         questionOptions={[{ id: 'dummy', optionText: 'dum-dum' }]}
+        cf={cf}
       />
     );
     expect(wrapper.find('div')).toExist();

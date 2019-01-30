@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import QuestionOptionButton from '../QuestionOptionButton/QuestionOptionButton';
+
 class QuestionOptions extends React.Component {
   static propTypes = {
+    cf: PropTypes.func.isRequired,
     questionOptions: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
@@ -11,14 +14,19 @@ class QuestionOptions extends React.Component {
     ).isRequired
   };
 
-  options = options =>
-    options.map(item => <li key={item.id}>{item.optionText}</li>);
+  options = () => {
+    const { questionOptions, cf } = this.props;
+    return questionOptions.map(item => (
+      <li key={item.id}>
+        <QuestionOptionButton optionText={item.optionText} cf={cf} />
+      </li>
+    ));
+  };
 
   render() {
-    const { questionOptions } = this.props;
     return (
       <div className="questionOptions">
-        <ul>{this.options(questionOptions)}</ul>
+        <ul>{this.options()}</ul>
       </div>
     );
   }
