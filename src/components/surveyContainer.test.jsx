@@ -7,20 +7,33 @@ import survey from '../mock/questions.json';
 const waitForAsync = () => new Promise(resolve => setImmediate(resolve));
 
 describe('survey container tests', () => {
-  // test('container has a click function that can get next question', async () => {
-  //   const wrapper = shallow(<SurveyContainer />);
-  //   await waitForAsync(); // see comment above...
-  //   expect(wrapper.instance().state.question.questionText).toMatch(
-  //     /Hi \[voter name\]\. Let’s begin!/
-  //   );
-  //   wrapper.instance().answerClicked();
-  //   await wrapper.update();
-  //   await waitForAsync(); // see comment above...
-  //   console.log(wrapper);
-  //   expect(wrapper.instance().state.question.questionText).toMatch(
-  //     /First, let’s start with do you like ice cream\?/
-  //   );
-  // });
+  test('child has button with click function', async () => {
+    const wrapper = mount(<SurveyContainer survey={survey} />);
+    await waitForAsync(); // see comment above...
+    expect(wrapper.instance().state.question.questionText).toMatch(
+      /Hi \[voter name\]\. Let’s begin!/
+    );
+    wrapper
+      .find('button')
+      .first()
+      .simulate('click');
+    wrapper.update();
+    expect(wrapper.instance().state.question.questionText).toMatch(
+      /First, let’s start with do you like ice cream\?/
+    );
+  });
+
+  test('container has a click function that can get next question', async () => {
+    const wrapper = shallow(<SurveyContainer survey={survey} />);
+    await waitForAsync(); // see comment above...
+    expect(wrapper.instance().state.question.questionText).toMatch(
+      /Hi \[voter name\]\. Let’s begin!/
+    );
+    wrapper.instance().answerClicked('35767-1');
+    expect(wrapper.instance().state.question.questionText).toMatch(
+      /First, let’s start with do you like ice cream\?/
+    );
+  });
 
   test('container stores question in state', async () => {
     const wrapper = shallow(<SurveyContainer survey={survey} />);

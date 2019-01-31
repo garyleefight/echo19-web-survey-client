@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import QuestionOptions from '../QuestionOptions/QuestionOptions';
 
 const Question = props => {
-  // render() {
   const { question, cf } = props;
   return (
     <div className="question">
@@ -12,8 +11,8 @@ const Question = props => {
       <QuestionOptions questionOptions={question.questionOptions} cf={cf} />
     </div>
   );
-  // }
 };
+
 Question.propTypes = {
   cf: PropTypes.func.isRequired,
   question: PropTypes.oneOfType([

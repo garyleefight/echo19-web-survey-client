@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import QuestionOptionButton from '../QuestionOptionButton/QuestionOptionButton';
 
-class QuestionOptions extends React.Component {
+export default class QuestionOptions extends React.Component {
   static propTypes = {
     cf: PropTypes.func.isRequired,
     questionOptions: PropTypes.arrayOf(
@@ -18,7 +18,11 @@ class QuestionOptions extends React.Component {
     const { questionOptions, cf } = this.props;
     return questionOptions.map(item => (
       <li key={item.id}>
-        <QuestionOptionButton optionText={item.optionText} cf={cf} />
+        <QuestionOptionButton
+          optionText={item.optionText}
+          cf={cf}
+          id={item.id}
+        />
       </li>
     ));
   };
@@ -31,5 +35,3 @@ class QuestionOptions extends React.Component {
     );
   }
 }
-
-export default QuestionOptions;
