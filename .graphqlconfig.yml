@@ -1,0 +1,16 @@
+projects:
+  websurveyclient:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        graphQLApiId: zrh2po6kubeflegbexmfehdmgi
+      endpoints:
+        prod: >-
+          https://ia2kcftkuneqbf2cokclcsh3xe.appsync-api.us-east-1.amazonaws.com/graphql

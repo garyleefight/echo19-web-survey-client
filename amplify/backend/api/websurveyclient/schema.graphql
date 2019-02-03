@@ -1,0 +1,5 @@
+type Survey @model {
+  id: ID!
+  name: String!
+  questions: String
+}

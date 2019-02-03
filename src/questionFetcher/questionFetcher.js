@@ -1,4 +1,4 @@
-const questionFetcher = (url = 'http://localhost:3000/questions.json') =>
+const questionFetcher = (url = '/questions.json') =>
   new Promise(async (resolve, reject) => {
     const response = await fetch(url, {
       mode: 'cors'
