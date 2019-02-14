@@ -7,13 +7,12 @@ import survey from '../mock/questions.json';
 const waitForAsync = () => new Promise(resolve => setImmediate(resolve));
 
 describe('survey container tests', () => {
-  // test('when complete is set, show end message', () => {
-  //   const wrapper = shallow(<SurveyContainer survey={survey} />);
-  //   expect(wrapper.instance().state.complete).toBe(false);
-  //   wrapper.instance().answerClicked('159349');
-  //   console.log(wrapper.instance().state.question);
-  //   expect(wrapper.text()).toMatch(/This call was paid for by Chocolate Cows/);
-  // });
+  test('when complete is set, show end message', () => {
+    const wrapper = shallow(<SurveyContainer survey={survey} />);
+    expect(wrapper.instance().state.complete).toBe(false);
+    wrapper.instance().answerClicked('159349');
+    expect(wrapper.text()).toMatch(/This call was paid for by Chocolate Cows/);
+  });
 
   test('end message gets set', () => {
     const wrapper = shallow(<SurveyContainer survey={survey} />);
