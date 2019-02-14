@@ -15,18 +15,27 @@ export default class SurveyContainer extends React.Component {
     super(props);
     this.questionParser = new QuestionParser(props.survey);
     this.state = {
-      question: this.questionParser.getFirstQuestion()
+      question: this.questionParser.getFirstQuestion(),
+      complete: false,
+      endMessage: this.questionParser.getEndMessage()
     };
   }
 
   answerClicked = id => {
-    this.setState({ question: this.questionParser.getNextQuestion(id) });
+    const q = this.questionParser.getNextQuestion(id);
+    if (q) {
+      this.setState({ question: q });
+    } else {
+      this.setState({ complete: true });
+    }
   };
 
   render() {
-    const { question } = this.state;
+    const { question, complete } = this.state;
     if (!question) {
       return <div>loading...</div>;
+    }
+    if (complete) {
     }
     return (
       <div className="surveyContainer">

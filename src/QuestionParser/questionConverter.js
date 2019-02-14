@@ -1,6 +1,14 @@
 export default q => {
   const newQuestions = [];
-  q.forEach(item => {
+  newQuestions.push({
+    id: 'intro',
+    questionText: q.intro,
+    questionHelp: q.intro,
+    questionOptions: [
+      { id: 'intro-option', optionText: 'OK', optionHelp: 'OK', action: 'none' }
+    ]
+  });
+  q.questions.forEach(item => {
     const newSurveyItem = {
       id: String(item.surveyQuestionId),
       intro: q.intro,
@@ -25,7 +33,8 @@ export default q => {
         {
           id: `${item.surveyQuestionId}-1`,
           optionText: 'OK',
-          optionHelp: 'OK'
+          optionHelp: 'OK',
+          action: 'none'
         }
       ];
     }

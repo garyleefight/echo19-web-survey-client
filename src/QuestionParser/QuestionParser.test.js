@@ -4,19 +4,27 @@ import survey from '../mock/questions.json';
 describe('question parser tests', () => {
   const qp = new QuestionParser(survey);
 
+  test('can get end message', () => {
+    expect(qp.getEndMessage()).toMatch(
+      /This call was paid for by Chocolate Cows/
+    );
+  });
+
   test('some questions contain bye', () => {
-    expect(qp.questions[1].questionOptions[1].action).toBe('BYE');
+    expect(qp.questions[2].questionOptions[1].action).toBe('BYE');
   });
 
   test('can get first question', () => {
-    expect(qp.getFirstQuestion().id).toBe('35767');
+    expect(qp.getFirstQuestion().questionText).toMatch(
+      /Hello! This is \[volunteer name\]/
+    );
   });
 
   test('will return false if the next question does not exist', () => {
     expect(qp.getNextQuestion('35774-1')).toBe(false);
   });
 
-  test('can get the next question after a click if the answer has addtestional questions', () => {
+  test('can get the next question after a click if the answer has additional questions', () => {
     expect(qp.getNextQuestion('159364').id).toBe('35774');
   });
 
@@ -42,11 +50,11 @@ describe('question parser tests', () => {
   });
 
   test('question parser can convert db questions to js questions', () => {
-    expect(qp.questions[0].id).toBe('35767');
+    expect(qp.questions[1].id).toBe('35767');
   });
 
   test('question parser gets questions', () => {
-    expect(qp.questions[0].id).toBe('35767');
+    expect(qp.questions[0].id).toBe('intro');
   });
 
   test('can load questions from file', () => {

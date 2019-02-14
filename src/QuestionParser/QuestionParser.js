@@ -2,8 +2,13 @@ import questionConverter from './questionConverter';
 
 export default class QuestionParser {
   constructor(data) {
-    this.questions = questionConverter(data.questions);
+    this.endMessage = data.endMessage;
+    this.questions = questionConverter(data);
     this.getAnswerQuestions = this.getNextQuestion;
+  }
+
+  getEndMessage() {
+    return this.endMessage;
   }
 
   getFirstQuestion() {
@@ -30,7 +35,7 @@ export default class QuestionParser {
       return optionIndex >= 0 && this.questions[index + 1];
     });
     if (gotoQuestion >= 0) {
-      return this.questions[gotoQuestion - 1];
+      return this.questions[gotoQuestion];
     }
     return found >= 0 ? this.questions[found + 1] : false;
   };

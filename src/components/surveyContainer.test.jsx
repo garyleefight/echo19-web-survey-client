@@ -7,12 +7,41 @@ import survey from '../mock/questions.json';
 const waitForAsync = () => new Promise(resolve => setImmediate(resolve));
 
 describe('survey container tests', () => {
+  // test('when complete is set, show end message', () => {
+  //   const wrapper = shallow(<SurveyContainer survey={survey} />);
+  //   expect(wrapper.instance().state.complete).toBe(false);
+  //   wrapper.instance().answerClicked('159349');
+  //   console.log(wrapper.instance().state.question);
+  //   expect(wrapper.text()).toMatch(/This call was paid for by Chocolate Cows/);
+  // });
+
+  test('end message gets set', () => {
+    const wrapper = shallow(<SurveyContainer survey={survey} />);
+    expect(wrapper.instance().state.endMessage).toMatch(
+      /This call was paid for by Chocolate Cows/
+    );
+  });
+
+  test('when done set state to complete', () => {
+    const wrapper = shallow(<SurveyContainer survey={survey} />);
+    expect(wrapper.instance().state.question.questionText).toMatch(
+      /Hello! This is \[volunteer name\] from Chocolate Cows/
+    );
+    expect(wrapper.instance().state.complete).toBe(false);
+    wrapper.instance().answerClicked('159349');
+    expect(wrapper.instance().state.complete).toBe(true);
+  });
+
   test('child has button with click function', async () => {
     const wrapper = mount(<SurveyContainer survey={survey} />);
     await waitForAsync(); // see comment above...
     expect(wrapper.instance().state.question.questionText).toMatch(
-      /Hi \[voter name\]\. Let’s begin!/
+      /Hello! This is \[volunteer name\] from Chocolate Cows/
     );
+    wrapper
+      .find('button')
+      .first()
+      .simulate('click');
     wrapper
       .find('button')
       .first()
@@ -27,7 +56,7 @@ describe('survey container tests', () => {
     const wrapper = shallow(<SurveyContainer survey={survey} />);
     await waitForAsync(); // see comment above...
     expect(wrapper.instance().state.question.questionText).toMatch(
-      /Hi \[voter name\]\. Let’s begin!/
+      /Hello! This is \[volunteer name\] from Chocolate Cows/
     );
     wrapper.instance().answerClicked('35767-1');
     expect(wrapper.instance().state.question.questionText).toMatch(
@@ -58,14 +87,14 @@ describe('survey container tests', () => {
         .find(Question)
         .dive()
         .text()
-    ).toMatch(/Hi \[voter name\]\. Let’s begin!/);
+    ).toMatch(/Hello! This is \[volunteer name\] from Chocolate Cows/);
   });
 
   test('contains survey questions', async () => {
     expect.assertions(1);
     const wrapper = shallow(<SurveyContainer survey={survey} />);
     await waitForAsync(); // see comment above...
-    expect(wrapper.instance().questionParser.questions[0].id).toBe('35767');
+    expect(wrapper.instance().questionParser.questions[0].id).toBe('intro');
   });
 
   test('can mount', () => {
