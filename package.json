@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -36,5 +36,14 @@
     "jest-enzyme": "^7.0.1",
     "jest-fetch-mock": "^2.1.0",
     "prettier": "^1.15.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!src/graphql/*",
+      "!src/serviceWorker.js",
+      "!src/index.js"
+    ]
   }
 }

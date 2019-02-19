@@ -2,6 +2,28 @@
 
 A web survey...
 
+## commands...
+
+run test:
+
+    yarn test
+
+run tests and coverage report:
+
+    yarn test --coverage
+
+start the app
+
+    yarn start
+
+amplify check status:
+
+    amplify status
+
+publish to aws
+
+    amplify publish
+
 ## Ecosystem
 
 - [AWS amplify]()
