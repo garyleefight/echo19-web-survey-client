@@ -25,3 +25,27 @@ export const deleteSurvey = `mutation DeleteSurvey($input: DeleteSurveyInput!) {
   }
 }
 `;
+export const createResponse = `mutation CreateResponse($input: CreateResponseInput!) {
+  createResponse(input: $input) {
+    id
+    key
+    value
+  }
+}
+`;
+export const updateResponse = `mutation UpdateResponse($input: UpdateResponseInput!) {
+  updateResponse(input: $input) {
+    id
+    key
+    value
+  }
+}
+`;
+export const deleteResponse = `mutation DeleteResponse($input: DeleteResponseInput!) {
+  deleteResponse(input: $input) {
+    id
+    key
+    value
+  }
+}
+`;

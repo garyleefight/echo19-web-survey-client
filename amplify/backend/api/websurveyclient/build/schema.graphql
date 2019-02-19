@@ -4,6 +4,12 @@ type Survey {
   questions: String
 }
 
+type Response {
+  id: ID!
+  key: String!
+  value: String!
+}
+
 enum ModelSortDirection {
   ASC
   DESC
@@ -81,6 +87,8 @@ input ModelSurveyFilterInput {
 type Query {
   getSurvey(id: ID!): Survey
   listSurveys(filter: ModelSurveyFilterInput, limit: Int, nextToken: String): ModelSurveyConnection
+  getResponse(id: ID!): Response
+  listResponses(filter: ModelResponseFilterInput, limit: Int, nextToken: String): ModelResponseConnection
 }
 
 input CreateSurveyInput {
@@ -103,10 +111,46 @@ type Mutation {
   createSurvey(input: CreateSurveyInput!): Survey
   updateSurvey(input: UpdateSurveyInput!): Survey
   deleteSurvey(input: DeleteSurveyInput!): Survey
+  createResponse(input: CreateResponseInput!): Response
+  updateResponse(input: UpdateResponseInput!): Response
+  deleteResponse(input: DeleteResponseInput!): Response
 }
 
 type Subscription {
   onCreateSurvey: Survey @aws_subscribe(mutations: ["createSurvey"])
   onUpdateSurvey: Survey @aws_subscribe(mutations: ["updateSurvey"])
   onDeleteSurvey: Survey @aws_subscribe(mutations: ["deleteSurvey"])
+  onCreateResponse: Response @aws_subscribe(mutations: ["createResponse"])
+  onUpdateResponse: Response @aws_subscribe(mutations: ["updateResponse"])
+  onDeleteResponse: Response @aws_subscribe(mutations: ["deleteResponse"])
+}
+
+type ModelResponseConnection {
+  items: [Response]
+  nextToken: String
+}
+
+input ModelResponseFilterInput {
+  id: ModelIDFilterInput
+  key: ModelStringFilterInput
+  value: ModelStringFilterInput
+  and: [ModelResponseFilterInput]
+  or: [ModelResponseFilterInput]
+  not: ModelResponseFilterInput
+}
+
+input CreateResponseInput {
+  id: ID
+  key: String!
+  value: String!
+}
+
+input UpdateResponseInput {
+  id: ID!
+  key: String
+  value: String
+}
+
+input DeleteResponseInput {
+  id: ID
 }

@@ -25,3 +25,27 @@ export const onDeleteSurvey = `subscription OnDeleteSurvey {
   }
 }
 `;
+export const onCreateResponse = `subscription OnCreateResponse {
+  onCreateResponse {
+    id
+    key
+    value
+  }
+}
+`;
+export const onUpdateResponse = `subscription OnUpdateResponse {
+  onUpdateResponse {
+    id
+    key
+    value
+  }
+}
+`;
+export const onDeleteResponse = `subscription OnDeleteResponse {
+  onDeleteResponse {
+    id
+    key
+    value
+  }
+}
+`;

@@ -24,3 +24,26 @@ export const listSurveys = `query ListSurveys(
   }
 }
 `;
+export const getResponse = `query GetResponse($id: ID!) {
+  getResponse(id: $id) {
+    id
+    key
+    value
+  }
+}
+`;
+export const listResponses = `query ListResponses(
+  $filter: ModelResponseFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listResponses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      key
+      value
+    }
+    nextToken
+  }
+}
+`;

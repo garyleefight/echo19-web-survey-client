@@ -3,3 +3,9 @@ type Survey @model {
   name: String!
   questions: String
 }
+
+type Response @model {
+  id: ID!
+  key: String!
+  value: String!
+}
