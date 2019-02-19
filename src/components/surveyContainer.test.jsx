@@ -1,4 +1,6 @@
 import React from 'react';
+import { API } from 'aws-amplify';
+
 import SurveyContainer from './SurveyContainer';
 import Question from './Question/Question';
 import survey from '../mock/questions.json';
@@ -9,6 +11,18 @@ const waitForAsync = () => new Promise(resolve => setImmediate(resolve));
 describe('survey container tests', () => {
   afterEach(() => {
     jest.clearAllMocks();
+  });
+
+  test('click function sends results to db', async () => {
+    expect.assertions(2);
+    const wrapper = shallow(<SurveyContainer survey={survey} />);
+    const spy = jest.spyOn(API, 'graphql').mockImplementation(waitForAsync);
+    expect(spy).not.toHaveBeenCalled();
+    await wrapper
+      .instance()
+      .answerClicked('159349', { key: 'my-key', value: 'my-value' });
+    expect(spy).toHaveBeenCalled();
+    spy.mockClear();
   });
 
   test('button click sends response object with key and value', () => {
@@ -32,11 +46,15 @@ describe('survey container tests', () => {
     spy.mockClear();
   });
 
-  test('when complete is set, show end message', () => {
+  test('when complete is set, show end message', async () => {
+    const spy = jest.spyOn(API, 'graphql').mockImplementation(waitForAsync);
     const wrapper = shallow(<SurveyContainer survey={survey} />);
     expect(wrapper.instance().state.complete).toBe(false);
-    wrapper.instance().answerClicked('159349');
+    await wrapper
+      .instance()
+      .answerClicked('159349', { key: 'my-key', value: 'my-value' });
     expect(wrapper.text()).toMatch(/This call was paid for by Chocolate Cows/);
+    spy.mockClear();
   });
 
   test('end message gets set', () => {
@@ -66,10 +84,13 @@ describe('survey container tests', () => {
       .find('button')
       .first()
       .simulate('click');
+    await waitForAsync(); // see comment above...
+    wrapper.update();
     wrapper
       .find('button')
       .first()
       .simulate('click');
+    await waitForAsync(); // see comment above...
     wrapper.update();
     expect(wrapper.instance().state.question.questionText).toMatch(
       /First, let’s start with do you like ice cream\?/

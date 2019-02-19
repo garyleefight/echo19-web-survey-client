@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Amplify, { API, graphqlOperation } from 'aws-amplify';
 
 import QuestionParser from '../QuestionParser/QuestionParser';
 import Question from './Question/Question';
+
+import * as mutations from '../graphql/mutations';
+
+import awsconfig from '../aws-exports';
+
+Amplify.configure(awsconfig);
 
 export default class SurveyContainer extends React.Component {
   static propTypes = {
@@ -21,7 +28,18 @@ export default class SurveyContainer extends React.Component {
     };
   }
 
-  answerClicked = id => {
+  answerClicked = async (id, r = { key: null, value: null }) => {
+    if (r.key) {
+      await API.graphql(
+        graphqlOperation(mutations.createResponse, {
+          input: {
+            id,
+            key: r.key,
+            value: r.value
+          }
+        })
+      );
+    }
     const q = this.questionParser.getNextQuestion(id);
     if (q) {
       this.setState({ question: q });
