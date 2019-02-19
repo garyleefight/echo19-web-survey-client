@@ -5,12 +5,16 @@ export default class QuestionOptions extends React.Component {
   static propTypes = {
     cf: PropTypes.func.isRequired,
     optionText: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired
+    id: PropTypes.string.isRequired,
+    response: PropTypes.shape({
+      key: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired
+    }).isRequired
   };
 
   click = () => {
-    const { cf, id } = this.props;
-    cf(id);
+    const { cf, id, response } = this.props;
+    cf(id, response);
   };
 
   render() {

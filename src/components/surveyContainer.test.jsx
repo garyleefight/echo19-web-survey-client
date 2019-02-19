@@ -7,6 +7,30 @@ import survey from '../mock/questions.json';
 const waitForAsync = () => new Promise(resolve => setImmediate(resolve));
 
 describe('survey container tests', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test('button click sends response object with key and value', () => {
+    expect.assertions(2);
+    const wrapper = mount(<SurveyContainer survey={survey} />);
+    const spy = jest
+      .spyOn(wrapper.instance(), 'answerClicked')
+      .mockImplementation(() => {
+        expect(true).toBe(true);
+        expect(spy.mock.calls[0][1]).toEqual({
+          key: 'intro-option',
+          value: 'OK'
+        });
+      });
+    wrapper.instance().forceUpdate();
+    wrapper
+      .find('button')
+      .first()
+      .simulate('click');
+    spy.mockClear();
+  });
+
   test('when complete is set, show end message', () => {
     const wrapper = shallow(<SurveyContainer survey={survey} />);
     expect(wrapper.instance().state.complete).toBe(false);

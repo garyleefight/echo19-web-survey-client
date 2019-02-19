@@ -22,6 +22,7 @@ export default class QuestionOptions extends React.Component {
           optionText={item.optionText}
           cf={cf}
           id={item.id}
+          response={{ key: item.id, value: item.optionText }}
         />
       </li>
     ));
