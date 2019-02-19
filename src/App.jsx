@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SurveyContainer from './components/SurveyContainer';
-import questionFetcher from './questionFetcher/questionFetcher';
+import SurveyContainer from './components/SurveyContainer.jsx';
+import questionFetcher from './questionFetcher/questionFetcher.js';
 
 export default class App extends React.Component {
   constructor(props) {
