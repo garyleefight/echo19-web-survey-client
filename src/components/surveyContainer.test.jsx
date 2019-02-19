@@ -12,13 +12,14 @@ describe('survey container tests', () => {
   });
 
   test('button click sends response object with key and value', () => {
-    expect.assertions(2);
+    expect.assertions(1);
     const wrapper = mount(<SurveyContainer survey={survey} />);
     const spy = jest
       .spyOn(wrapper.instance(), 'answerClicked')
       .mockImplementation(() => {
-        expect(true).toBe(true);
-        expect(spy.mock.calls[0][1]).toEqual({
+        // first call, second argument...
+        const arg = spy.mock.calls[0][1];
+        expect(arg).toEqual({
           key: 'intro-option',
           value: 'OK'
         });
