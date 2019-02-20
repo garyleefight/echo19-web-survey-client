@@ -6,6 +6,7 @@ type Survey {
 
 type Response {
   id: ID!
+  questionId: String!
   key: String!
   value: String!
 }
@@ -132,6 +133,7 @@ type ModelResponseConnection {
 
 input ModelResponseFilterInput {
   id: ModelIDFilterInput
+  questionId: ModelStringFilterInput
   key: ModelStringFilterInput
   value: ModelStringFilterInput
   and: [ModelResponseFilterInput]
@@ -141,12 +143,14 @@ input ModelResponseFilterInput {
 
 input CreateResponseInput {
   id: ID
+  questionId: String!
   key: String!
   value: String!
 }
 
 input UpdateResponseInput {
   id: ID!
+  questionId: String
   key: String
   value: String
 }

@@ -28,6 +28,7 @@ export const onDeleteSurvey = `subscription OnDeleteSurvey {
 export const onCreateResponse = `subscription OnCreateResponse {
   onCreateResponse {
     id
+    questionId
     key
     value
   }
@@ -36,6 +37,7 @@ export const onCreateResponse = `subscription OnCreateResponse {
 export const onUpdateResponse = `subscription OnUpdateResponse {
   onUpdateResponse {
     id
+    questionId
     key
     value
   }
@@ -44,6 +46,7 @@ export const onUpdateResponse = `subscription OnUpdateResponse {
 export const onDeleteResponse = `subscription OnDeleteResponse {
   onDeleteResponse {
     id
+    questionId
     key
     value
   }

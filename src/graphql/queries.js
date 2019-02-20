@@ -27,6 +27,7 @@ export const listSurveys = `query ListSurveys(
 export const getResponse = `query GetResponse($id: ID!) {
   getResponse(id: $id) {
     id
+    questionId
     key
     value
   }
@@ -40,6 +41,7 @@ export const listResponses = `query ListResponses(
   listResponses(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      questionId
       key
       value
     }

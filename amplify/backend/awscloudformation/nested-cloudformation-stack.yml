@@ -94,10 +94,10 @@
 				"TemplateURL": "https://s3.amazonaws.com/websurveyclient-20190114110917-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"AppSyncApiName": "websurveyclient",
-					"schemaGraphql": "s3://websurveyclient-20190114110917-deployment/amplify-appsync-files/schema.graphql.1550556229079",
+					"schemaGraphql": "s3://websurveyclient-20190114110917-deployment/amplify-appsync-files/schema.graphql.1550612607712",
 					"ResolverBucket": "websurveyclient-20190114110917-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1550556229079",
+					"DeploymentTimestamp": "1550612607712",
 					"env": "dev"
 				}
 			}
