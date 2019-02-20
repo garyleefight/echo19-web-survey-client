@@ -1,0 +1,193 @@
+[
+  {
+    "id": "intro",
+    "questionText": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "questionHelp": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "questionOptions": [
+      {
+        "id": "intro-option",
+        "optionText": "OK",
+        "optionHelp": "OK",
+        "action": "none"
+      }
+    ]
+  },
+  {
+    "id": "35767",
+    "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "goal": "Use this democall to play around with echo1>We have set up a robot-list to simulate voters answering the survey Contact us at help@echo19.com to get more information about this product.",
+    "endMessage": "Okay, that’s it. Thank you very much for your time! Have a great day/evening. This call was paid for by Chocolate Cows and is not authorized by any candidate or candidate’s committee. 555-555-5555.",
+    "questionText": "Hi [voter name]. Let’s begin!",
+    "questionHelp": "Hi [voter name]. Let’s begin!",
+    "questionOptions": [
+      {
+        "id": "35767-1",
+        "optionText": "OK",
+        "optionHelp": "OK",
+        "action": "none"
+      }
+    ]
+  },
+  {
+    "id": "35768",
+    "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "goal": "Use this democall to play around with echo1>We have set up a robot-list to simulate voters answering the survey Contact us at help@echo19.com to get more information about this product.",
+    "endMessage": "Okay, that’s it. Thank you very much for your time! Have a great day/evening. This call was paid for by Chocolate Cows and is not authorized by any candidate or candidate’s committee. 555-555-5555.",
+    "questionText": "First, let’s start with do you like ice cream?",
+    "questionHelp": "First, let’s start with do you like ice cream?",
+    "questionOptions": [
+      {
+        "id": "159348",
+        "optionText": "Yes",
+        "optionHelp": "Yes",
+        "action": "-1"
+      },
+      {
+        "id": "159349",
+        "optionText": "No",
+        "optionHelp": "No",
+        "action": "BYE"
+      }
+    ]
+  },
+  {
+    "id": "35769",
+    "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "goal": "Use this democall to play around with echo1>We have set up a robot-list to simulate voters answering the survey Contact us at help@echo19.com to get more information about this product.",
+    "endMessage": "Okay, that’s it. Thank you very much for your time! Have a great day/evening. This call was paid for by Chocolate Cows and is not authorized by any candidate or candidate’s committee. 555-555-5555.",
+    "questionText": "Okay, that’s good. About how many times a month would you say you eat ice cream?",
+    "questionHelp": "Okay, that’s good. About how many times a month would you say you eat ice cream?",
+    "questionOptions": [
+      {
+        "id": "159350",
+        "optionText": "10 or more",
+        "optionHelp": "10 or more",
+        "action": "-1"
+      },
+      {
+        "id": "159351",
+        "optionText": "6 to 9 times per month",
+        "optionHelp": "6 to 9 times per month",
+        "action": "-1"
+      },
+      {
+        "id": "159352",
+        "optionText": "3 to 5 times per month",
+        "optionHelp": "3 to 5 times per month",
+        "action": "-1"
+      },
+      {
+        "id": "159353",
+        "optionText": "1 to 2 times per month",
+        "optionHelp": "1 to 2 times per month",
+        "action": "-1"
+      },
+      {
+        "id": "159354",
+        "optionText": "less than once a month",
+        "optionHelp": "less than once a month",
+        "action": "-1"
+      }
+    ]
+  },
+  {
+    "id": "35770",
+    "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "goal": "Use this democall to play around with echo1>We have set up a robot-list to simulate voters answering the survey Contact us at help@echo19.com to get more information about this product.",
+    "endMessage": "Okay, that’s it. Thank you very much for your time! Have a great day/evening. This call was paid for by Chocolate Cows and is not authorized by any candidate or candidate’s committee. 555-555-5555.",
+    "questionText": "Do you prefer to eat ice cream out of a Bowl, on a sugar cone, on a cake cone, or it doesn't matter?",
+    "questionHelp": "Do you prefer to eat ice cream out of a Bowl, on a sugar cone, on a cake cone, or it doesn't matter?",
+    "questionOptions": [
+      {
+        "id": "159355",
+        "optionText": "Bowl",
+        "optionHelp": "Bowl",
+        "action": "-1"
+      },
+      {
+        "id": "159356",
+        "optionText": "Sugar cone",
+        "optionHelp": "Sugar cone",
+        "action": "-1"
+      },
+      {
+        "id": "159357",
+        "optionText": "Cake cone",
+        "optionHelp": "Cake cone",
+        "action": "-1"
+      },
+      {
+        "id": "159358",
+        "optionText": "It doesn't matter",
+        "optionHelp": "It doesn't matter",
+        "action": "-1"
+      }
+    ]
+  },
+  {
+    "id": "35772",
+    "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "goal": "Use this democall to play around with echo1>We have set up a robot-list to simulate voters answering the survey Contact us at help@echo19.com to get more information about this product.",
+    "endMessage": "Okay, that’s it. Thank you very much for your time! Have a great day/evening. This call was paid for by Chocolate Cows and is not authorized by any candidate or candidate’s committee. 555-555-5555.",
+    "questionText": "Now, the tough one - which of the following is the best ice cream flavor: Chocolate, Vanilla or Strawberry?",
+    "questionHelp": "Now, the tough one - which of the following is the best ice cream flavor: Chocolate, Vanilla or Strawberry?",
+    "questionOptions": [
+      {
+        "id": "159360",
+        "optionText": "Chocolate",
+        "optionHelp": "Chocolate",
+        "action": "GOTO=7"
+      },
+      {
+        "id": "159361",
+        "optionText": "Vanilla",
+        "optionHelp": "Vanilla",
+        "action": "-1"
+      },
+      {
+        "id": "159362",
+        "optionText": "Strawberry",
+        "optionHelp": "Strawberry",
+        "action": "-1"
+      }
+    ]
+  },
+  {
+    "id": "35773",
+    "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "goal": "Use this democall to play around with echo1>We have set up a robot-list to simulate voters answering the survey Contact us at help@echo19.com to get more information about this product.",
+    "endMessage": "Okay, that’s it. Thank you very much for your time! Have a great day/evening. This call was paid for by Chocolate Cows and is not authorized by any candidate or candidate’s committee. 555-555-5555.",
+    "questionText": "Are you sure it’s not chocolate?",
+    "questionHelp": "Are you sure it’s not chocolate?",
+    "questionOptions": [
+      {
+        "id": "159363",
+        "optionText": "Yes",
+        "optionHelp": "Yes",
+        "action": "BYE"
+      },
+      {
+        "id": "159364",
+        "optionText": "No",
+        "optionHelp": "No",
+        "action": "GOTO=7"
+      }
+    ]
+  },
+  {
+    "id": "35774",
+    "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
+    "goal": "Use this democall to play around with echo1>We have set up a robot-list to simulate voters answering the survey Contact us at help@echo19.com to get more information about this product.",
+    "endMessage": "Okay, that’s it. Thank you very much for your time! Have a great day/evening. This call was paid for by Chocolate Cows and is not authorized by any candidate or candidate’s committee. 555-555-5555.",
+    "questionText": "You are correct, chocolate is the best!",
+    "questionHelp": "You are correct, chocolate is the best!",
+    "questionOptions": [
+      {
+        "id": "35774-1",
+        "optionText": "OK",
+        "optionHelp": "OK",
+        "action": "none"
+      }
+    ]
+  }
+]

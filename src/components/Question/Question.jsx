@@ -7,8 +7,14 @@ const Question = props => {
   const { question, cf } = props;
   return (
     <div className="question">
-      <h3>{question.questionText}</h3>
-      <QuestionOptions questionOptions={question.questionOptions} cf={cf} />
+      <h3>
+        {question.questionText} - {question.id}
+      </h3>
+      <QuestionOptions
+        questionOptions={question.questionOptions}
+        questionId={question.id}
+        cf={cf}
+      />
     </div>
   );
 };

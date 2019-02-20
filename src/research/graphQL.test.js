@@ -25,13 +25,13 @@ describe('GraphQL tests', () => {
     const resp = await API.graphql(
       graphqlOperation(mutations.createResponse, {
         input: {
-          id: now,
+          questionId: now,
           key: 'key',
           value: 'value'
         }
       })
     );
-    expect(parseInt(resp.data.createResponse.id, 10)).toBe(now);
+    expect(parseInt(resp.data.createResponse.questionId, 10)).toBe(now);
     done();
   });
 });

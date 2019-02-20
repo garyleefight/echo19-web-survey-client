@@ -16,6 +16,16 @@ const q = {
 const cf = jest.fn();
 
 describe('Question tests', () => {
+  test('question options gets passed question id', () => {
+    const wrapper = shallow(<Question question={q} cf={cf} />);
+    expect(
+      wrapper
+        .find(QuestionOptions)
+        .dive()
+        .instance().props.questionId
+    ).toBe('35767');
+  });
+
   test('can get passed and passes click function', () => {
     const wrapper = shallow(<Question question={q} cf={cf} />);
     wrapper.find(QuestionOptions).dive();

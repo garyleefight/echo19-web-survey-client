@@ -28,19 +28,19 @@ export default class SurveyContainer extends React.Component {
     };
   }
 
-  answerClicked = async (id, r = { key: null, value: null }) => {
+  answerClicked = async (questionId, r = { key: null, value: null }) => {
     if (r.key) {
       await API.graphql(
         graphqlOperation(mutations.createResponse, {
           input: {
-            id,
+            questionId,
             key: r.key,
             value: r.value
           }
         })
       );
     }
-    const q = this.questionParser.getNextQuestion(id);
+    const q = this.questionParser.getNextQuestion(questionId);
     if (q) {
       this.setState({ question: q });
     } else {
