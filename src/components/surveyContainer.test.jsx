@@ -25,8 +25,8 @@ describe('survey container tests', () => {
     spy.mockClear();
   });
 
-  test('button click sends response object with key and value', () => {
-    expect.assertions(1);
+  test('button click sends response object with key and value and questionId', () => {
+    expect.assertions(2);
     const wrapper = mount(<SurveyContainer survey={survey} />);
     const spy = jest
       .spyOn(wrapper.instance(), 'answerClicked')
@@ -37,6 +37,7 @@ describe('survey container tests', () => {
           key: 'intro-option',
           value: 'OK'
         });
+        expect(spy.mock.calls[0][2]).toBe('intro');
       });
     wrapper.instance().forceUpdate();
     wrapper

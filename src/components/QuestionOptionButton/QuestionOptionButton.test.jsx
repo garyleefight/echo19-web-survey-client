@@ -3,14 +3,16 @@ import QuestionOptionButton from './QuestionOptionButton';
 
 const normalProps = {
   response: { key: 'my-key', value: 'my-value' },
-  id: 'my-id'
+  id: 'my-id',
+  questionId: 'my-question-id'
 };
 
 describe('QuestionOptionButton tests', () => {
-  test('click function passes key value pair argument', () => {
-    expect.assertions(3);
-    const cf = (id, response) => {
+  test('click function passes key value pair argument and questionId', () => {
+    expect.assertions(4);
+    const cf = (id, response, questionId) => {
       expect(id).toBe('my-id');
+      expect(questionId).toBe('my-question-id');
       expect(response.key).toBe('my-key');
       expect(response.value).toBe('my-value');
     };

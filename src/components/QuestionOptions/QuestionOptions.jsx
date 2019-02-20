@@ -6,6 +6,7 @@ import QuestionOptionButton from '../QuestionOptionButton/QuestionOptionButton';
 export default class QuestionOptions extends React.Component {
   static propTypes = {
     cf: PropTypes.func.isRequired,
+    questionId: PropTypes.string.isRequired,
     questionOptions: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.string.isRequired,
@@ -15,10 +16,11 @@ export default class QuestionOptions extends React.Component {
   };
 
   options = () => {
-    const { questionOptions, cf } = this.props;
+    const { questionOptions, cf, questionId } = this.props;
     return questionOptions.map(item => (
       <li key={item.id}>
         <QuestionOptionButton
+          questionId={questionId}
           optionText={item.optionText}
           cf={cf}
           id={item.id}

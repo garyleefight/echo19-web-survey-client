@@ -6,6 +6,7 @@ export default class QuestionOptions extends React.Component {
     cf: PropTypes.func.isRequired,
     optionText: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    questionId: PropTypes.string.isRequired,
     response: PropTypes.shape({
       key: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired
@@ -13,8 +14,8 @@ export default class QuestionOptions extends React.Component {
   };
 
   click = () => {
-    const { cf, id, response } = this.props;
-    cf(id, response);
+    const { cf, id, response, questionId } = this.props;
+    cf(id, response, questionId);
   };
 
   render() {

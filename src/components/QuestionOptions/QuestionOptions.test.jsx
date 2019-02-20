@@ -31,14 +31,31 @@ const qo = [
 
 const cf = jest.fn();
 
+const normalProps = {
+  questionId: 'question-id',
+  questionOptions: qo,
+  cf
+};
+
 describe('QuestionOptions tests', () => {
+  test('question id gets passed to question option button', () => {
+    const wrapper = shallow(<QuestionOptions {...normalProps} />);
+    expect(
+      wrapper
+        .find(QuestionOptionButton)
+        .first()
+        .dive()
+        .instance().props.questionId
+    ).toBe('question-id');
+  });
+
   test('options have option buttons', () => {
-    const wrapper = shallow(<QuestionOptions questionOptions={qo} cf={cf} />);
+    const wrapper = shallow(<QuestionOptions {...normalProps} />);
     expect(wrapper.find(QuestionOptionButton)).toExist();
   });
 
   test('has 5 options rendered to page', () => {
-    const wrapper = shallow(<QuestionOptions questionOptions={qo} cf={cf} />);
+    const wrapper = shallow(<QuestionOptions {...normalProps} />);
     expect(wrapper.find(QuestionOptionButton)).toHaveLength(5);
   });
 
@@ -47,18 +64,14 @@ describe('QuestionOptions tests', () => {
       <QuestionOptions
         questionOptions={[{ id: '35767-1', optionText: 'OK' }]}
         cf={cf}
+        questionId="question-id"
       />
     );
     expect(wrapper.instance().props.questionOptions[0].id).toBe('35767-1');
   });
 
   test('renders', () => {
-    const wrapper = shallow(
-      <QuestionOptions
-        questionOptions={[{ id: 'dummy', optionText: 'dum-dum' }]}
-        cf={cf}
-      />
-    );
+    const wrapper = shallow(<QuestionOptions {...normalProps} />);
     expect(wrapper.find('div')).toExist();
   });
 });
