@@ -4,8 +4,14 @@ export default q => {
     id: 'intro',
     questionText: q.intro,
     questionHelp: q.intro,
+    type: 'MULTIPLE_CHOICE',
     questionOptions: [
-      { id: 'intro-option', optionText: 'OK', optionHelp: 'OK', action: 'none' }
+      {
+        id: 'intro-option',
+        optionText: 'OK',
+        optionHelp: 'OK',
+        action: 'none'
+      }
     ]
   });
   q.questions.forEach(item => {
@@ -15,7 +21,8 @@ export default q => {
       goal: q.goal,
       endMessage: q.endMessage,
       questionText: item.nameLong,
-      questionHelp: item.nameLong
+      questionHelp: item.nameLong,
+      type: item.type || 'MULTIPLE_CHOICE'
     };
     // if / else statement to handle questions without any answers - i.e. statements
     if (item.answers) {
