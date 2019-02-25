@@ -4,7 +4,7 @@ export default q => {
     id: 'intro',
     questionText: q.intro,
     questionHelp: q.intro,
-    type: 'MULTIPLE_CHOICE',
+    questionType: 'MULTIPLE_CHOICE',
     questionOptions: [
       {
         id: 'intro-option',
@@ -17,12 +17,9 @@ export default q => {
   q.questions.forEach(item => {
     const newSurveyItem = {
       id: String(item.surveyQuestionId),
-      intro: q.intro,
-      goal: q.goal,
-      endMessage: q.endMessage,
       questionText: item.nameLong,
       questionHelp: item.nameLong,
-      type: item.type || 'MULTIPLE_CHOICE'
+      questionType: item.questionType || 'MULTIPLE_CHOICE'
     };
     // if / else statement to handle questions without any answers - i.e. statements
     if (item.answers) {

@@ -25,7 +25,7 @@ describe('question parser tests', () => {
   });
 
   test('can get the next question after a click if the answer has additional questions', () => {
-    expect(qp.getNextQuestion('159364').id).toBe('35774');
+    expect(qp.getNextQuestion('159362').id).toBe('357739');
   });
 
   test('has data', () => {

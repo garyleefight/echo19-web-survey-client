@@ -4,12 +4,16 @@ import dbQuestions from '../mock/questions.json';
 const q = questionConverter(dbQuestions);
 
 describe('questionConverter tests', () => {
+  test('there is a mock question with type "TEXT_ENTRY"', () => {
+    expect(q[6].questionType).toBe('TEXT_ENTRY');
+  });
+
   test('first question has default type of multiple choice', () => {
-    expect(q[0].type).toBe('MULTIPLE_CHOICE');
+    expect(q[0].questionType).toBe('MULTIPLE_CHOICE');
   });
 
   test('question can have default type of multiple choice', () => {
-    expect(q[1].type).toBe('MULTIPLE_CHOICE');
+    expect(q[1].questionType).toBe('MULTIPLE_CHOICE');
   });
 
   test('conversion has intro question', () => {
@@ -24,6 +28,6 @@ describe('questionConverter tests', () => {
   });
 
   test('test skip data gets entered into object', () => {
-    expect(q[6].questionOptions[1].action).toBe('GOTO=7');
+    expect(q[7].questionOptions[1].action).toBe('GOTO=8');
   });
 });
