@@ -10,7 +10,7 @@ import * as mutations from '../graphql/mutations';
 import awsconfig from '../aws-exports';
 
 Amplify.configure(awsconfig);
-
+//test
 export default class SurveyContainer extends React.Component {
   static propTypes = {
     survey: PropTypes.shape({
