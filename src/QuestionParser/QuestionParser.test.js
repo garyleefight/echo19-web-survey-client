@@ -21,11 +21,12 @@ describe('question parser tests', () => {
   });
 
   test('will return false if the next question does not exist', () => {
-    expect(qp.getNextQuestion('35774-1')).toBe(false);
+    const lastQuestion = qp.questions[qp.questions.length - 1].id;
+    expect(qp.getNextQuestion(lastQuestion)).toBe(false);
   });
 
   test('can get the next question after a click if the answer has additional questions', () => {
-    expect(qp.getNextQuestion('159362').id).toBe('357739');
+    expect(qp.getNextQuestion('159362').id).toBe('35773');
   });
 
   test('has data', () => {
@@ -39,10 +40,6 @@ describe('question parser tests', () => {
 
   test('returns next question with faked id', () => {
     expect(qp.getNextQuestion('35767-1').id).toBe('35768');
-  });
-
-  test('returns false if no next question', () => {
-    expect(qp.getNextQuestion('35774-1')).toBe(false);
   });
 
   test('can get next question', () => {

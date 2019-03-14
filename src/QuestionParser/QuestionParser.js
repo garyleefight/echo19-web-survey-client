@@ -35,7 +35,7 @@ export default class QuestionParser {
       return optionIndex >= 0 && this.questions[index + 1];
     });
     if (gotoQuestion >= 0) {
-      return this.questions[gotoQuestion];
+      return this.questions[gotoQuestion - 1];
     }
     return found >= 0 ? this.questions[found + 1] : false;
   };

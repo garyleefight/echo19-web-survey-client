@@ -44,5 +44,15 @@ export default q => {
     }
     newQuestions.push(newSurveyItem);
   });
+  // CAUTION: pretty hacky...
+  // replace array position with id...
+  newQuestions.forEach(item => {
+    item.questionOptions.forEach(itemOption => {
+      const f = /GOTO=(.*?)/.exec(itemOption.action);
+      if (f) {
+        console.log(itemOption.action, f[1]);
+      }
+    });
+  });
   return newQuestions;
 };
