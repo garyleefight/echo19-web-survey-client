@@ -21,6 +21,11 @@
             "UnauthRoleName": "websurveyclient-20190114110917-unauthRole",
             "StackName": "websurveyclient-20190114110917",
             "StackId": "arn:aws:cloudformation:us-east-1:924685066025:stack/websurveyclient-20190114110917/82479030-1827-11e9-84b8-12545315cab6"
+        },
+        "categories": {
+            "auth": {
+                "cognito08445f3c": {}
+            }
         }
     }
 }
