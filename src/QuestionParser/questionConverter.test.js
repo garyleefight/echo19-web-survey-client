@@ -4,10 +4,6 @@ import dbQuestions from '../mock/questions.json';
 const q = questionConverter(dbQuestions);
 
 describe('questionConverter tests', () => {
-  test('goto is replaced with the correct id', () => {
-    expect(q[6].questionOptions[1].action).toBe('GOTO=35774');
-  });
-
   test('there is a mock question with type "TEXT_ENTRY"', () => {
     expect(q[8].questionType).toBe('TEXT_ENTRY');
   });

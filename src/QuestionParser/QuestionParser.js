@@ -15,6 +15,15 @@ export default class QuestionParser {
     return this.questions[0];
   }
 
+  returnById(id) {
+    const i = this.questions.findIndex((q, index) => {
+      if (q.id === id) return index;
+      return false;
+    });
+    if (i > 0) return this.questions[i];
+    return false;
+  }
+
   getNextQuestion = id => {
     let gotoQuestion = -1;
     const found = this.questions.findIndex((question, index) => {

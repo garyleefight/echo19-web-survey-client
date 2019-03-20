@@ -4,6 +4,16 @@ import survey from '../mock/questions.json';
 describe('question parser tests', () => {
   const qp = new QuestionParser(survey);
 
+  test('returns false if id does not exist in skip', () => {
+    expect(qp.returnById('noid')).toBe(false);
+  });
+
+  test('can skip to id', () => {
+    expect(qp.returnById('35770').questionText).toBe(
+      "Do you prefer to eat ice cream out of a Bowl, on a sugar cone, on a cake cone, or it doesn't matter?"
+    );
+  });
+
   test('can get end message', () => {
     expect(qp.getEndMessage()).toMatch(
       /This call was paid for by Chocolate Cows/
