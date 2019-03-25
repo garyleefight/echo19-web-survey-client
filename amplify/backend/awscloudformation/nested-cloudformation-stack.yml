@@ -94,16 +94,10 @@
 				"TemplateURL": "https://s3.amazonaws.com/websurveyclient-20190114110917-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
 					"AppSyncApiName": "websurveyclient",
-					"AuthCognitoUserPoolId": {
-						"Fn::GetAtt": [
-							"authcognito08445f3c",
-							"Outputs.UserPoolId"
-						]
-					},
-					"schemaGraphql": "s3://websurveyclient-20190114110917-deployment/amplify-appsync-files/schema.graphql.1553123041920",
+					"schemaGraphql": "s3://websurveyclient-20190114110917-deployment/amplify-appsync-files/schema.graphql.1553126369767",
 					"ResolverBucket": "websurveyclient-20190114110917-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1553123041920",
+					"DeploymentTimestamp": "1553126369767",
 					"env": "dev"
 				}
 			}

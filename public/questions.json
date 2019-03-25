@@ -188,7 +188,7 @@
           "digit": "1",
           "value": "Chocolate",
           "answerValue": "",
-          "action": "GOTO=7",
+          "action": "GOTO=8",
           "doNotRandomize": 0,
           "responseText": ""
         },
@@ -233,7 +233,7 @@
           "digit": "1",
           "value": "Yes",
           "answerValue": "",
-          "action": "BYE",
+          "action": "-1",
           "doNotRandomize": 0,
           "responseText": ""
         },
@@ -242,7 +242,7 @@
           "digit": "2",
           "value": "No",
           "answerValue": "",
-          "action": "GOTO=7",
+          "action": "GOTO=8",
           "doNotRandomize": 0,
           "responseText": ""
         }
@@ -261,6 +261,34 @@
       "defaultResponseText": "",
       "statement": 1,
       "feedback": 0
+    },
+    {
+      "surveyQuestionId": 357739,
+      "SurveyQuestionName": "What IS your favorite flavor?",
+      "questionType": "TEXT_ENTRY",
+      "defaultAction": "-1",
+      "defaultActionValue": "",
+      "noAnswerReceivedAction": "-1",
+      "noAnswerReceivedValue": "",
+      "singleDigit": 1,
+      "multipleDigitQuestion": 0,
+      "numberOfDigits": 1,
+      "required": 0,
+      "nameLong": "What IS your favorite flavor?",
+      "defaultResponseText": "",
+      "statement": 0,
+      "feedback": 0,
+      "answers": [
+        {
+          "surveyQuestionAnswerId": 1593639,
+          "digit": "1",
+          "value": "Enter your favorite flavor...",
+          "answerValue": "",
+          "action": "-1",
+          "doNotRandomize": 0,
+          "responseText": ""
+        }
+      ]
     }
   ],
   "intro": "Hello! This is [volunteer name] from Chocolate Cows with a brief 3-question survey about ice cream. Is this [voter name]?",
