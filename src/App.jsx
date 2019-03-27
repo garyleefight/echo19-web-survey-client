@@ -29,8 +29,12 @@ export default class App extends React.Component {
     }
     return (
       <div className="App">
-        <h1>echo19</h1>
-        <SurveyContainer survey={survey} />
+        <div className="jumbotron">
+          <h1>Chocolate Cows Survey (hardcoded)</h1>
+        </div>
+        <div className="container">
+          <SurveyContainer survey={survey} />
+        </div>
       </div>
     );
   }

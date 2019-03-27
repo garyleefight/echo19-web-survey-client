@@ -51,10 +51,18 @@ export default class SurveyContainer extends React.Component {
   render() {
     const { question, complete, endMessage } = this.state;
     if (!question) {
-      return <div>loading...</div>;
+      return (
+        <div className="surveyContainer">
+          <p className="h4">loading...</p>
+        </div>
+      );
     }
     if (complete) {
-      return <div>{endMessage}</div>;
+      return (
+        <div className="surveyContainer">
+          <p className="h4">{endMessage}</p>
+        </div>
+      );
     }
     return (
       <div className="surveyContainer">

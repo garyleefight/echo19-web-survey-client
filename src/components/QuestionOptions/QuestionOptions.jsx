@@ -18,8 +18,9 @@ export default class QuestionOptions extends React.Component {
   options = () => {
     const { questionOptions, cf, questionId } = this.props;
     return questionOptions.map(item => (
-      <li key={item.id}>
+      <li key={item.id} className="">
         <QuestionOptionButton
+          className="list-group-item"
           questionId={questionId}
           optionText={item.optionText}
           cf={cf}
@@ -33,7 +34,7 @@ export default class QuestionOptions extends React.Component {
   render() {
     return (
       <div className="questionOptions">
-        <ul>{this.options()}</ul>
+        <ul className="list-group">{this.options()}</ul>
       </div>
     );
   }

@@ -7,9 +7,9 @@ const Question = props => {
   const { question, cf } = props;
   return (
     <div className="question">
-      <h3>
+      <p className="h4">
         {question.questionText} - {question.id}
-      </h3>
+      </p>
       <QuestionOptions
         questionOptions={question.questionOptions}
         questionId={question.id}

@@ -22,7 +22,11 @@ export default class QuestionOptions extends React.Component {
     const { optionText } = this.props;
     return (
       <div>
-        <button type="button" onClick={this.click}>
+        <button
+          className="list-group-item list-group-item-action"
+          type="button"
+          onClick={this.click}
+        >
           {optionText}
         </button>
       </div>
