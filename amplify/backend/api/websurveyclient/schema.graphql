@@ -9,5 +9,4 @@ type Response @model {
   questionId: String!
   key: String!
   value: String!
-  createAt: AWSDateTime!
 }
