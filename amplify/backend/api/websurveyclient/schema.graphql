@@ -1,6 +1,0 @@
-type Response @model {
-  id: ID!
-  questionId: String!
-  key: String!
-  value: String!
-}

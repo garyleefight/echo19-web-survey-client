@@ -5,15 +5,7 @@
 			"providerPlugin": "awscloudformation"
 		}
 	},
-	"api": {
-		"websurveyclient": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"securityType": "API_KEY"
-			}
-		}
-	},
+	"api": {},
 	"auth": {
 		"cognito08445f3c": {
 			"service": "Cognito",
