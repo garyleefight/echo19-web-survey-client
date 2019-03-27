@@ -5,7 +5,7 @@ export const createSurvey = `mutation CreateSurvey($input: CreateSurveyInput!) {
   createSurvey(input: $input) {
     id
     name
-    questions
+    description
   }
 }
 `;
@@ -13,7 +13,7 @@ export const updateSurvey = `mutation UpdateSurvey($input: UpdateSurveyInput!) {
   updateSurvey(input: $input) {
     id
     name
-    questions
+    description
   }
 }
 `;
@@ -21,7 +21,7 @@ export const deleteSurvey = `mutation DeleteSurvey($input: DeleteSurveyInput!) {
   deleteSurvey(input: $input) {
     id
     name
-    questions
+    description
   }
 }
 `;

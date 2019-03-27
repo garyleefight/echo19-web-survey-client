@@ -5,7 +5,7 @@ export const getSurvey = `query GetSurvey($id: ID!) {
   getSurvey(id: $id) {
     id
     name
-    questions
+    description
   }
 }
 `;
@@ -18,7 +18,7 @@ export const listSurveys = `query ListSurveys(
     items {
       id
       name
-      questions
+      description
     }
     nextToken
   }

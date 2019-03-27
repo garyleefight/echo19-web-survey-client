@@ -1,0 +1,160 @@
+type Survey {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type Response {
+  id: ID!
+  questionId: String!
+  key: String!
+  value: String!
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelSurveyConnection {
+  items: [Survey]
+  nextToken: String
+}
+
+input ModelStringFilterInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+}
+
+input ModelIDFilterInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+}
+
+input ModelIntFilterInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  contains: Int
+  notContains: Int
+  between: [Int]
+}
+
+input ModelFloatFilterInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  contains: Float
+  notContains: Float
+  between: [Float]
+}
+
+input ModelBooleanFilterInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSurveyFilterInput {
+  id: ModelIDFilterInput
+  name: ModelStringFilterInput
+  description: ModelStringFilterInput
+  and: [ModelSurveyFilterInput]
+  or: [ModelSurveyFilterInput]
+  not: ModelSurveyFilterInput
+}
+
+type Query {
+  getSurvey(id: ID!): Survey
+  listSurveys(filter: ModelSurveyFilterInput, limit: Int, nextToken: String): ModelSurveyConnection
+  getResponse(id: ID!): Response
+  listResponses(filter: ModelResponseFilterInput, limit: Int, nextToken: String): ModelResponseConnection
+}
+
+input CreateSurveyInput {
+  id: ID
+  name: String!
+  description: String
+}
+
+input UpdateSurveyInput {
+  id: ID!
+  name: String
+  description: String
+}
+
+input DeleteSurveyInput {
+  id: ID
+}
+
+type Mutation {
+  createSurvey(input: CreateSurveyInput!): Survey
+  updateSurvey(input: UpdateSurveyInput!): Survey
+  deleteSurvey(input: DeleteSurveyInput!): Survey
+  createResponse(input: CreateResponseInput!): Response
+  updateResponse(input: UpdateResponseInput!): Response
+  deleteResponse(input: DeleteResponseInput!): Response
+}
+
+type Subscription {
+  onCreateSurvey: Survey @aws_subscribe(mutations: ["createSurvey"])
+  onUpdateSurvey: Survey @aws_subscribe(mutations: ["updateSurvey"])
+  onDeleteSurvey: Survey @aws_subscribe(mutations: ["deleteSurvey"])
+  onCreateResponse: Response @aws_subscribe(mutations: ["createResponse"])
+  onUpdateResponse: Response @aws_subscribe(mutations: ["updateResponse"])
+  onDeleteResponse: Response @aws_subscribe(mutations: ["deleteResponse"])
+}
+
+type ModelResponseConnection {
+  items: [Response]
+  nextToken: String
+}
+
+input ModelResponseFilterInput {
+  id: ModelIDFilterInput
+  questionId: ModelStringFilterInput
+  key: ModelStringFilterInput
+  value: ModelStringFilterInput
+  and: [ModelResponseFilterInput]
+  or: [ModelResponseFilterInput]
+  not: ModelResponseFilterInput
+}
+
+input CreateResponseInput {
+  id: ID
+  questionId: String!
+  key: String!
+  value: String!
+}
+
+input UpdateResponseInput {
+  id: ID!
+  questionId: String
+  key: String
+  value: String
+}
+
+input DeleteResponseInput {
+  id: ID
+}

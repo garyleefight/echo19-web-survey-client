@@ -1,0 +1,4 @@
+{
+    "AppSyncApiName": "echo19websurveyclien",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST"
+}

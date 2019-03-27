@@ -1,0 +1,6 @@
+{
+    "AppSyncApiName": "echo19websurveyclien",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "S3DeploymentBucket": "echo19websurveyclien-20190327094438-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/e28371d68bb577fdaefe4848816335e16ced1053"
+}

@@ -5,7 +5,7 @@ export const onCreateSurvey = `subscription OnCreateSurvey {
   onCreateSurvey {
     id
     name
-    questions
+    description
   }
 }
 `;
@@ -13,7 +13,7 @@ export const onUpdateSurvey = `subscription OnUpdateSurvey {
   onUpdateSurvey {
     id
     name
-    questions
+    description
   }
 }
 `;
@@ -21,7 +21,7 @@ export const onDeleteSurvey = `subscription OnDeleteSurvey {
   onDeleteSurvey {
     id
     name
-    questions
+    description
   }
 }
 `;

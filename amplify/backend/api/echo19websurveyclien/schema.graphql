@@ -1,0 +1,12 @@
+type Survey @model {
+  id: ID!
+  name: String!
+  description: String
+}
+
+type Response @model {
+  id: ID!
+  questionId: String!
+  key: String!
+  value: String!
+}
