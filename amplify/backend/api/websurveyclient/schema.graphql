@@ -1,9 +1,3 @@
-type Survey @model {
-  id: ID!
-  name: String!
-  questions: String
-}
-
 type Response @model {
   id: ID!
   questionId: String!
