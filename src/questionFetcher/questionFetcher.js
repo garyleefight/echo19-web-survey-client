@@ -1,8 +1,7 @@
-const questionFetcher = (url = '/questions.json') =>
+const questionFetcher = (url = '/questions.json', params = {}) =>
   new Promise(async (resolve, reject) => {
-    const response = await fetch(url, {
-      mode: 'cors'
-    });
+    const combinedParams = Object.assign({ mode: 'cors' }, params);
+    const response = await fetch(url, combinedParams);
     if (response.ok) {
       const json = await response.json();
       resolve(json);
