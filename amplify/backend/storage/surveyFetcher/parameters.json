@@ -1,0 +1,5 @@
+{
+    "tableName": "surveyFetcher",
+    "partitionKeyName": "ID",
+    "partitionKeyType": "S"
+}
