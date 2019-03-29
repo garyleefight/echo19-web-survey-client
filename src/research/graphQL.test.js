@@ -10,10 +10,10 @@ describe('GraphQL tests', () => {
     expect(true).toBe(true);
   });
 
-  test('can get survey url from graphql api', () => {
+  test('can get survey url from graphql api', async () => {
     const surveyUrl = await API.graphql(
-      graphqlOperation(queries.get)
-    )
+      graphqlOperation(queries.getSurveyFromApi, { id: '1' })
+    );
   });
 
   test.skip('should pass', async done => {
