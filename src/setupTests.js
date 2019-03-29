@@ -13,6 +13,9 @@ global.mount = mount;
 
 global.fetch = require('jest-fetch-mock');
 
+global.window = Object.create(window);
+
 module.exports = {
-  browser: true
+  // browser: true,
+  // testURL: 'http://coolsitebro.com'
 };

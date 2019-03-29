@@ -8,6 +8,16 @@ describe('questionFetcher tests', () => {
     fetch.mockResponse(JSON.stringify(survey));
   });
 
+  test('test that I can set the url for the window', () => {
+    // i believe (not proven) that creat-react-app sets location to http://localhost/
+    // for some reason, i can't change it in the exports testURL: 'http://coolsitebro.com'
+    // somewhat confirmed here:
+    // https://github.com/facebook/create-react-app/blob/3be35763044c690458e806c255e100336de0d9a1/packages/react-scripts/scripts/utils/createJestConfig.js
+    window.history.pushState({}, 'Test Title', '?q=true');
+    expect(window.location.href).toBe('http://localhost/?q=true');
+    expect(window.location.search).toBe('?q=true');
+  });
+
   test('can set headers and body', () => {
     const json = JSON.stringify({ callId: '24167' });
     questionFetcher('http://yeahoo.com', {
