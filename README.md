@@ -2,6 +2,10 @@
 
 A web survey....
 
+## todo
+
+- figure out `.graphqlconfig.yml` file - seems like a problem...
+
 ## commands...
 
 run test:

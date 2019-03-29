@@ -10,3 +10,8 @@ type Response @model {
   key: String!
   value: String!
 }
+
+type SurveyFromApi @model {
+  id: ID!
+  url: String!
+}

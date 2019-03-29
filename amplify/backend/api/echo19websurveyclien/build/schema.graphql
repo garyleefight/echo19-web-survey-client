@@ -11,6 +11,11 @@ type Response {
   value: String!
 }
 
+type SurveyFromApi {
+  id: ID!
+  url: String!
+}
+
 enum ModelSortDirection {
   ASC
   DESC
@@ -90,6 +95,8 @@ type Query {
   listSurveys(filter: ModelSurveyFilterInput, limit: Int, nextToken: String): ModelSurveyConnection
   getResponse(id: ID!): Response
   listResponses(filter: ModelResponseFilterInput, limit: Int, nextToken: String): ModelResponseConnection
+  getSurveyFromApi(id: ID!): SurveyFromApi
+  listSurveyFromApis(filter: ModelSurveyFromApiFilterInput, limit: Int, nextToken: String): ModelSurveyFromApiConnection
 }
 
 input CreateSurveyInput {
@@ -115,6 +122,9 @@ type Mutation {
   createResponse(input: CreateResponseInput!): Response
   updateResponse(input: UpdateResponseInput!): Response
   deleteResponse(input: DeleteResponseInput!): Response
+  createSurveyFromApi(input: CreateSurveyFromApiInput!): SurveyFromApi
+  updateSurveyFromApi(input: UpdateSurveyFromApiInput!): SurveyFromApi
+  deleteSurveyFromApi(input: DeleteSurveyFromApiInput!): SurveyFromApi
 }
 
 type Subscription {
@@ -124,6 +134,9 @@ type Subscription {
   onCreateResponse: Response @aws_subscribe(mutations: ["createResponse"])
   onUpdateResponse: Response @aws_subscribe(mutations: ["updateResponse"])
   onDeleteResponse: Response @aws_subscribe(mutations: ["deleteResponse"])
+  onCreateSurveyFromApi: SurveyFromApi @aws_subscribe(mutations: ["createSurveyFromApi"])
+  onUpdateSurveyFromApi: SurveyFromApi @aws_subscribe(mutations: ["updateSurveyFromApi"])
+  onDeleteSurveyFromApi: SurveyFromApi @aws_subscribe(mutations: ["deleteSurveyFromApi"])
 }
 
 type ModelResponseConnection {
@@ -156,5 +169,32 @@ input UpdateResponseInput {
 }
 
 input DeleteResponseInput {
+  id: ID
+}
+
+type ModelSurveyFromApiConnection {
+  items: [SurveyFromApi]
+  nextToken: String
+}
+
+input ModelSurveyFromApiFilterInput {
+  id: ModelIDFilterInput
+  url: ModelStringFilterInput
+  and: [ModelSurveyFromApiFilterInput]
+  or: [ModelSurveyFromApiFilterInput]
+  not: ModelSurveyFromApiFilterInput
+}
+
+input CreateSurveyFromApiInput {
+  id: ID
+  url: String!
+}
+
+input UpdateSurveyFromApiInput {
+  id: ID!
+  url: String
+}
+
+input DeleteSurveyFromApiInput {
   id: ID
 }
