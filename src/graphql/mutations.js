@@ -52,3 +52,24 @@ export const deleteResponse = `mutation DeleteResponse($input: DeleteResponseInp
   }
 }
 `;
+export const createSurveyFromApi = `mutation CreateSurveyFromApi($input: CreateSurveyFromApiInput!) {
+  createSurveyFromApi(input: $input) {
+    id
+    url
+  }
+}
+`;
+export const updateSurveyFromApi = `mutation UpdateSurveyFromApi($input: UpdateSurveyFromApiInput!) {
+  updateSurveyFromApi(input: $input) {
+    id
+    url
+  }
+}
+`;
+export const deleteSurveyFromApi = `mutation DeleteSurveyFromApi($input: DeleteSurveyFromApiInput!) {
+  deleteSurveyFromApi(input: $input) {
+    id
+    url
+  }
+}
+`;

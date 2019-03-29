@@ -49,3 +49,24 @@ export const listResponses = `query ListResponses(
   }
 }
 `;
+export const getSurveyFromApi = `query GetSurveyFromApi($id: ID!) {
+  getSurveyFromApi(id: $id) {
+    id
+    url
+  }
+}
+`;
+export const listSurveyFromApis = `query ListSurveyFromApis(
+  $filter: ModelSurveyFromApiFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSurveyFromApis(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      url
+    }
+    nextToken
+  }
+}
+`;

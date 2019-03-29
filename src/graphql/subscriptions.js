@@ -52,3 +52,24 @@ export const onDeleteResponse = `subscription OnDeleteResponse {
   }
 }
 `;
+export const onCreateSurveyFromApi = `subscription OnCreateSurveyFromApi {
+  onCreateSurveyFromApi {
+    id
+    url
+  }
+}
+`;
+export const onUpdateSurveyFromApi = `subscription OnUpdateSurveyFromApi {
+  onUpdateSurveyFromApi {
+    id
+    url
+  }
+}
+`;
+export const onDeleteSurveyFromApi = `subscription OnDeleteSurveyFromApi {
+  onDeleteSurveyFromApi {
+    id
+    url
+  }
+}
+`;
