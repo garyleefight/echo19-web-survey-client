@@ -14,4 +14,5 @@ type Response @model {
 type SurveyFromApi @model {
   id: ID!
   url: String!
+  callId: String
 }

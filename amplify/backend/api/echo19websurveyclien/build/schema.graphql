@@ -14,6 +14,7 @@ type Response {
 type SurveyFromApi {
   id: ID!
   url: String!
+  callId: String
 }
 
 enum ModelSortDirection {
@@ -180,6 +181,7 @@ type ModelSurveyFromApiConnection {
 input ModelSurveyFromApiFilterInput {
   id: ModelIDFilterInput
   url: ModelStringFilterInput
+  callId: ModelStringFilterInput
   and: [ModelSurveyFromApiFilterInput]
   or: [ModelSurveyFromApiFilterInput]
   not: ModelSurveyFromApiFilterInput
@@ -188,11 +190,13 @@ input ModelSurveyFromApiFilterInput {
 input CreateSurveyFromApiInput {
   id: ID
   url: String!
+  callId: String
 }
 
 input UpdateSurveyFromApiInput {
   id: ID!
   url: String
+  callId: String
 }
 
 input DeleteSurveyFromApiInput {
