@@ -4,9 +4,6 @@ import survey from '../mock/questions.json';
 
 const nock = require('nock');
 
-// nock.recorder.rec();
-nock.disableNetConnect();
-
 function nockItOut() {
   nock(/.*/)
     .options('/graphql')
@@ -34,6 +31,16 @@ function nockItOut() {
 }
 
 describe('questionFetcher tests', () => {
+  beforeAll(() => {
+    // nock.recorder.rec();
+    nock.disableNetConnect();
+  });
+
+  afterAll(() => {
+    nock.restore();
+    nock.enableNetConnect();
+  });
+
   beforeEach(() => {
     fetch.resetMocks();
     fetch.mockResponse(JSON.stringify(survey));
