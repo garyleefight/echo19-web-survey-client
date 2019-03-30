@@ -30,6 +30,7 @@ const questionFetcher = async (url = '/questions.json', params = {}) => {
   try {
     return new Promise(async (resolve, reject) => {
       const combinedParams = Object.assign(combineParams, params);
+      console.log(combinedParams);
       const response = await fetch(newUrl, combinedParams);
       if (response.ok) {
         const json = await response.json();
