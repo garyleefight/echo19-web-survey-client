@@ -9,7 +9,13 @@ const queryString = require('query-string');
 
 // TODO: this is getting ugly, needs a refactor....
 const questionFetcher = async (url = '/questions.json', params = {}) => {
-  let combineParams = { mode: 'cors' };
+  let combineParams = {
+    mode: 'cors',
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'multipart/form-data'
+    }
+  };
   let newUrl = url;
   const qs = queryString.parse(window.location.search);
 
