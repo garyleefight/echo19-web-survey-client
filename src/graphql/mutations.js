@@ -56,6 +56,7 @@ export const createSurveyFromApi = `mutation CreateSurveyFromApi($input: CreateS
   createSurveyFromApi(input: $input) {
     id
     url
+    callId
   }
 }
 `;
@@ -63,6 +64,7 @@ export const updateSurveyFromApi = `mutation UpdateSurveyFromApi($input: UpdateS
   updateSurveyFromApi(input: $input) {
     id
     url
+    callId
   }
 }
 `;
@@ -70,6 +72,7 @@ export const deleteSurveyFromApi = `mutation DeleteSurveyFromApi($input: DeleteS
   deleteSurveyFromApi(input: $input) {
     id
     url
+    callId
   }
 }
 `;

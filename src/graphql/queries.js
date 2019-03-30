@@ -53,6 +53,7 @@ export const getSurveyFromApi = `query GetSurveyFromApi($id: ID!) {
   getSurveyFromApi(id: $id) {
     id
     url
+    callId
   }
 }
 `;
@@ -65,6 +66,7 @@ export const listSurveyFromApis = `query ListSurveyFromApis(
     items {
       id
       url
+      callId
     }
     nextToken
   }

@@ -56,6 +56,7 @@ export const onCreateSurveyFromApi = `subscription OnCreateSurveyFromApi {
   onCreateSurveyFromApi {
     id
     url
+    callId
   }
 }
 `;
@@ -63,6 +64,7 @@ export const onUpdateSurveyFromApi = `subscription OnUpdateSurveyFromApi {
   onUpdateSurveyFromApi {
     id
     url
+    callId
   }
 }
 `;
@@ -70,6 +72,7 @@ export const onDeleteSurveyFromApi = `subscription OnDeleteSurveyFromApi {
   onDeleteSurveyFromApi {
     id
     url
+    callId
   }
 }
 `;

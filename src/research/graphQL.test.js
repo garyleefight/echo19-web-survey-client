@@ -11,9 +11,24 @@ describe('GraphQL tests', () => {
   });
 
   test('can get survey url from graphql api', async () => {
-    const surveyUrl = await API.graphql(
-      graphqlOperation(queries.getSurveyFromApi, { id: '1' })
+    const resp = await API.graphql(
+      graphqlOperation(queries.getSurveyFromApi, {
+        id: '1dbe51af-5988-400e-87a9-3d5cdd253293'
+      })
     );
+    expect(JSON.parse(resp.data.getSurveyFromApi.callId)).toBe(24167);
+  });
+
+  test.skip('can add surveyFromApi', async () => {
+    const resp = await API.graphql(
+      graphqlOperation(mutations.createSurveyFromApi, {
+        input: {
+          url: 'http://somewhere.com/apiV2/getScript',
+          callId: '24167'
+        }
+      })
+    );
+    expect(resp.data.createSurveyFromApi.callId).toBe('24167');
   });
 
   test.skip('should pass', async done => {

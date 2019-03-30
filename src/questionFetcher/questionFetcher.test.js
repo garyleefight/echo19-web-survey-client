@@ -2,10 +2,50 @@ import questionFetcher from './questionFetcher';
 
 import survey from '../mock/questions.json';
 
+const nock = require('nock');
+
+// nock.recorder.rec();
+nock.disableNetConnect();
+
+function nockItOut() {
+  nock(/.*/)
+    .options('/graphql')
+    .reply(200, '', [
+      'Access-Control-Allow-Origin',
+      '*',
+      'Access-Control-Allow-Headers',
+      'X-Api-Key'
+    ]);
+
+  nock(/.*/)
+    .post('/graphql', {
+      query: /.*query.*/,
+      variables: { id: /.*/ }
+    })
+    .reply(200, {
+      data: {
+        getSurveyFromApi: {
+          id: 'blah',
+          url: 'http://someplace.com/apiV2/getScript',
+          callId: '1'
+        }
+      }
+    });
+}
+
 describe('questionFetcher tests', () => {
   beforeEach(() => {
     fetch.resetMocks();
     fetch.mockResponse(JSON.stringify(survey));
+  });
+
+  test('test fetcher can change based on querystring', async () => {
+    nockItOut();
+    window.history.pushState({}, '', '?callid=sample-id-like-this');
+    await questionFetcher();
+    expect(fetch.mock.calls[0][0]).toBe('http://someplace.com/apiV2/getScript');
+    expect(fetch.mock.calls.length).toEqual(1);
+    nock.restore();
   });
 
   test('test that I can set the url for the window', () => {
