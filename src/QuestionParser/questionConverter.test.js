@@ -4,6 +4,12 @@ import dbQuestions from '../mock/questions.json';
 const q = questionConverter(dbQuestions);
 
 describe('questionConverter tests', () => {
+  test('throws error when can not parse', () => {
+    expect(() => {
+      questionConverter({ blah: 1 });
+    }).toThrow('parsing error');
+  });
+
   test('there is a mock question with type "TEXT_ENTRY"', () => {
     expect(q[8].questionType).toBe('TEXT_ENTRY');
   });

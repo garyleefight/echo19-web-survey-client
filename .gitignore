@@ -24,6 +24,7 @@ yarn-error.log*
 
 *.delete
 *.hide
+*.hide.*
 githide
 
 #amplify
