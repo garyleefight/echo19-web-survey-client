@@ -1,9 +1,15 @@
 import questionConverter from './questionConverter';
 import dbQuestions from '../mock/questions.json';
+import newDbQuestions from '../mock/questions-new-format.hide.json';
 
 const q = questionConverter(dbQuestions);
 
 describe('questionConverter tests', () => {
+  test.only('new question json format', () => {
+    const newQ = questionConverter(newDbQuestions);
+    expect(newQ[0].questionText).toBe('Survey example w/randomized questions');
+  });
+
   test('throws error when can not parse', () => {
     expect(() => {
       questionConverter({ blah: 1 });
